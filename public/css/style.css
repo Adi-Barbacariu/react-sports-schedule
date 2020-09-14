@@ -1,0 +1,244 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1.5px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+.schedule__day {
+  position: relative;
+}
+
+.schedule__date {
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.schedule__match {
+  background: #1c1c1c;
+  background: linear-gradient(90deg, #1c1c1c 18%, #303030 30%);
+  display: flex;
+  width: 65rem;
+  height: 10rem;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+  transition: transform ease-out 0.1s;
+  box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.75);
+}
+@media only screen and (max-width: 700px) {
+  .schedule__match {
+    width: 100%;
+  }
+}
+.schedule__match:hover {
+  transform: scale(1.01);
+}
+
+.match__time {
+  padding: 0rem 2rem;
+  width: 11.5rem;
+}
+.match__time span {
+  font-weight: bold;
+  margin-top: 1rem;
+  display: inline-block;
+}
+.match__time--live span {
+  color: #dd0703;
+}
+
+.match__img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 12rem;
+  height: 10rem;
+  overflow: hidden;
+  margin-right: 2rem;
+}
+
+.match__teams {
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+.match__teams span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: normal;
+  font-size: 1.4rem;
+  color: #707070;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+@media only screen and (max-width: 1500px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
+.container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -100;
+}
+@media only screen and (max-width: 1500px) {
+  .container {
+    background-image: url(./../../img/cover-square.jpg);
+  }
+}
+.container__overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.1) 25%,
+    rgba(0, 0, 0, 0.6) 65%
+  );
+}
+@media only screen and (max-width: 1500px) {
+  .container__overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.4) 25%,
+      rgba(0, 0, 0, 0.6) 65%
+    );
+  }
+}
+
+.main {
+  font-size: 1.6rem;
+  height: 100vh;
+}
+@media only screen and (max-width: 1500px) {
+  .main {
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+}
+
+.main__nav {
+  padding: 6rem;
+  margin-bottom: 10rem;
+}
+@media only screen and (max-width: 900px) {
+  .main__nav {
+    padding: 2rem;
+  }
+}
+@media only screen and (min-width: 901px) and (max-width: 1500px) {
+  .main__nav {
+    padding: 6rem 12rem;
+  }
+}
+.main__section {
+  overflow-y: scroll;
+  display: grid;
+  justify-content: center;
+  height: 100vh;
+  padding: 10rem 12rem;
+}
+
+@media only screen and (max-width: 1500px) {
+  .main__section {
+    overflow-y: visible;
+    height: auto;
+    align-content: center;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .main__section {
+    padding: 10rem 2rem;
+  }
+}
+
+.match__img--1 {
+  background-image: url("../../src/img/match1-240px.jpg");
+}
+
+.match__img--2 {
+  background-image: url("./../../img/match5-240px.jpg");
+}
+
+.match__img--3 {
+  background-image: url("./../../img/match4-240px.jpg");
+}
+
+.match__img--4 {
+  background-image: url("./../../img/match2-240px.jpg");
+}
+
+.match__img--5 {
+  background-image: url("./../../img/match3-240px.jpg");
+}
+
+.nav__sport-name {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+  transition: opacity linear 0.1s;
+  cursor: pointer;
+  outline: none;
+}
+.nav__sport-name img {
+  width: 15px;
+  margin: 0 1.5rem;
+  transform: rotate(-90deg);
+}
+.nav__sport-name:hover {
+  opacity: 1;
+}
+
+.nav__league-name {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  right: 1.6rem;
+  margin-top: 1.5rem;
+  opacity: 0.7;
+  transition: opacity linear 0.1s;
+  cursor: pointer;
+}
+.nav__league-name img {
+  width: 15px;
+  margin: 0 1.5rem;
+}
+.nav__league-name:hover {
+  opacity: 1;
+}
