@@ -11,20 +11,14 @@ export default class Nav extends React.Component {
     return (
       <div className="main__nav">
         <SportBtn name="FOOTBALL">
-          <CompetitionBtn
-            handleClick={this.props.handleClick}
-            name="Champions League"
-          />
-          <CompetitionBtn
-            handleClick={this.props.handleClick}
-            name="Europa League"
-          />
+          <CompetitionBtn name="Champions League" />
+          <CompetitionBtn name="Europa League" />
         </SportBtn>
         <SportBtn name="BASKETBALL">
-          <CompetitionBtn handleClick={this.props.handleClick} name="NBA" />
+          <CompetitionBtn name="NBA" />
         </SportBtn>
         <SportBtn name="UFC">
-          <CompetitionBtn handleClick={this.props.handleClick} name="251" />
+          <CompetitionBtn name="251" />
         </SportBtn>
       </div>
     );

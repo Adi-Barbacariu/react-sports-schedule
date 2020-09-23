@@ -4,6 +4,7 @@ import Content from "./Content";
 import coverFootball from "../img/coverFootball.jpg";
 import coverBasket from "../img/coverbasket.jpg";
 import coverUFC from "../img/coverUFC.jpg";
+import { HandleClickContext } from "../handleClickContext";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -31,7 +32,9 @@ export default class App extends React.Component {
           <div className="container__overlay"></div>
         </div>
         <main className="main">
-          <Nav handleClick={this.handleClick} />
+          <HandleClickContext.Provider value={this.handleClick}>
+            <Nav />
+          </HandleClickContext.Provider>
           <section className="main__section">
             <Content currentCompetition={this.state.competition} />
           </section>

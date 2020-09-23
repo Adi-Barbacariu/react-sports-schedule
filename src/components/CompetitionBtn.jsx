@@ -1,15 +1,18 @@
 import React from "react";
 import icon from "../img/championship.png";
+import { HandleClickContext } from "../handleClickContext";
 
-export default class CompetitionBtn extends React.Component {
+class CompetitionBtn extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  static contextType = HandleClickContext;
+
   render() {
     return (
       <button
-        onClick={() => this.props.handleClick(this.props.name)}
+        onClick={() => this.context(this.props.name)}
         className="nav__league-name"
       >
         <img src={icon} alt="icon" /> {this.props.name}
@@ -17,3 +20,5 @@ export default class CompetitionBtn extends React.Component {
     );
   }
 }
+
+export default CompetitionBtn;
