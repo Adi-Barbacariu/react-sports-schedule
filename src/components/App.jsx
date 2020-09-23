@@ -1,10 +1,8 @@
 import React from "react";
 import Nav from "./Nav";
 import Content from "./Content";
-import coverFootball from "../img/coverFootball.jpg";
-import coverBasket from "../img/coverbasket.jpg";
-import coverUFC from "../img/coverUFC.jpg";
 import { HandleClickContext } from "../handleClickContext";
+import Background from "./Background";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -18,19 +16,9 @@ export default class App extends React.Component {
   }
 
   render() {
-    let style = { backgroundImage: `url(${coverFootball})` };
-
-    if (this.state.competition === "NBA") {
-      style = { backgroundImage: `url(${coverBasket})` };
-    } else if (this.state.competition === "251") {
-      style = { backgroundImage: `url(${coverUFC})` };
-    }
-
     return (
       <React.Fragment>
-        <div className="container" style={style}>
-          <div className="container__overlay"></div>
-        </div>
+        <Background competition={this.state.competition} />
         <main className="main">
           <HandleClickContext.Provider value={this.handleClick}>
             <Nav />
